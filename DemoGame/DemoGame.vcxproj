@@ -112,10 +112,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="shader_loader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Libs\glew.h" />
     <ClInclude Include="Libs\glut.h" />
+    <ClInclude Include="shader_loader.h" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="Libs\glew32.lib" />

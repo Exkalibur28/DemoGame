@@ -21,12 +21,18 @@
     <ClCompile Include="main.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="shader_loader.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Libs\glew.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="Libs\glut.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="shader_loader.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
