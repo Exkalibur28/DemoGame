@@ -3,7 +3,7 @@
 #include<utility>
 #include"Libs/glew.h"
 #include"Libs/glut.h"
-#include"rednering_utilities.h"
+#include"rendering_utilities.h"
 
 typedef std::pair<float, float> point;
 

@@ -119,7 +119,7 @@
   <ItemGroup>
     <ClInclude Include="Libs\glew.h" />
     <ClInclude Include="Libs\glut.h" />
-    <ClInclude Include="rednering_utilities.h" />
+    <ClInclude Include="rendering_utilities.h" />
     <ClInclude Include="shader_loader.h" />
   </ItemGroup>
   <ItemGroup>

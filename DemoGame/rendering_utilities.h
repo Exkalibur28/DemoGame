@@ -17,7 +17,7 @@ private:
 
 /*
 Die Kamera mappt ihren Sichtbereich orthographisch auf [-1,1]. 
-Die Mitte des Sichbereichs liegt bei pos.
+Die Mitte des Sichtbereichs liegt bei pos.
 near = -1, far = 1
 */
 class camera {

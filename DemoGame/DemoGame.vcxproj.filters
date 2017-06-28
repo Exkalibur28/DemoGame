@@ -44,7 +44,7 @@
     <ClInclude Include="Libs\glew.h">
       <Filter>Libs</Filter>
     </ClInclude>
-    <ClInclude Include="rednering_utilities.h">
+    <ClInclude Include="rendering_utilities.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
