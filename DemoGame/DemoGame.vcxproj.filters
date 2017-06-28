@@ -9,15 +9,15 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
-    <Filter Include="Ressourcendateien">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="Libs">
       <UniqueIdentifier>{613cbcfe-6f94-4163-930b-1f531c5ea607}</UniqueIdentifier>
     </Filter>
     <Filter Include="Shader">
       <UniqueIdentifier>{6e7e0570-cf8d-4aa2-8b2f-48e466c7a3b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Ressourcendateien">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -28,6 +28,9 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="simple_quad_mesh.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering_utilities.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,6 +44,9 @@
     <ClInclude Include="Libs\glew.h">
       <Filter>Libs</Filter>
     </ClInclude>
+    <ClInclude Include="rednering_utilities.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="Libs\glut32.lib">
@@ -51,14 +57,14 @@
     </Library>
   </ItemGroup>
   <ItemGroup>
-    <None Include="simple_quad._mesh.h">
-      <Filter>Headerdateien</Filter>
-    </None>
     <None Include="Shader\simple_quad_shader_frag.glsl">
       <Filter>Shader</Filter>
     </None>
     <None Include="Shader\simple_quad_shader_vert.glsl">
       <Filter>Shader</Filter>
+    </None>
+    <None Include="simple_quad_mesh.h">
+      <Filter>Headerdateien</Filter>
     </None>
   </ItemGroup>
 </Project>

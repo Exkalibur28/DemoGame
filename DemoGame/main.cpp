@@ -1,14 +1,17 @@
 #include"Libs/glew.h"
 #include"Libs/glut.h"
-#include"simple_quad._mesh.h"
+#include"simple_quad_mesh.h"
 #include<Windows.h>
 
 quad_mesh* q;
+camera cam = camera(16, 9);
+matrix4x4 model;
+
 
 void glut_loop() {
 	glClearColor(1, 0.2, 1, 1);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	q->draw();
+	q->draw(model,cam.get_mat());
 	glutSwapBuffers();
 }
 

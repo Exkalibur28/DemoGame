@@ -1,10 +1,10 @@
-#include"simple_quad._mesh.h"
+#include"simple_quad_mesh.h"
 #include"shader_loader.h"
 
-static GLuint shader = 0;
+static GLuint shader = -1;
 
 static void init_shader() {
-	if (shader == 0) {
+	if (shader == -1) {
 		shader = LoadShaders("Shader/simple_quad_shader_vert.glsl", "Shader/simple_quad_shader_frag.glsl");
 	}
 }
@@ -25,16 +25,14 @@ quad_mesh::quad_mesh(point a, point b, point c, point d) {
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vb_data), vb_data, GL_DYNAMIC_DRAW);
 	glGenBuffers(1, &vao);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, vao);
-	unsigned int vao_data[4];
-	vao_data[0] = 1;
-	vao_data[1] = 0;
-	vao_data[2] = 2;
-	vao_data[3] = 3;
+	unsigned int vao_data[] = { 1,0,2,3 };
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(vao_data), vao_data, GL_DYNAMIC_DRAW);
 	this->r = 1;
 	this->g = 0;
 	this->b = 1;
 	this->a = 1;
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
 }
 
 void quad_mesh::set_color(float r, float g, float b, float a) {
@@ -44,9 +42,13 @@ void quad_mesh::set_color(float r, float g, float b, float a) {
 	this->a = a;
 }
 
-void quad_mesh::draw() {
+void quad_mesh::draw(matrix4x4 model , matrix4x4 view) {
 	int loc = glGetUniformLocation(shader, "vert_col");
 	glUniform4f(loc, this->r, this->g, this->b, this->a);
+	loc = glGetUniformLocation(shader, "model");
+	glUniformMatrix4fv(loc,1,false,model.get_data());
+	loc = glGetUniformLocation(shader, "view");
+	glUniformMatrix4fv(loc, 1, false, view.get_data());
 	glEnableVertexAttribArray(0);
 	glBindBuffer(GL_ARRAY_BUFFER, vb);
 	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, NULL);
@@ -55,4 +57,11 @@ void quad_mesh::draw() {
 	//glDrawArrays(GL_TRIANGLE_STRIP,0,4);
 	glDrawElements(GL_TRIANGLE_STRIP,4,GL_UNSIGNED_INT,NULL);
 	glDisableVertexAttribArray(0);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+}
+
+quad_mesh::~quad_mesh() {
+	glDeleteBuffers(1, &vao);
+	glDeleteBuffers(1, &vb);
 }
