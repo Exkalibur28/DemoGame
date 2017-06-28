@@ -16,6 +16,9 @@
     <Filter Include="Libs">
       <UniqueIdentifier>{613cbcfe-6f94-4163-930b-1f531c5ea607}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{6e7e0570-cf8d-4aa2-8b2f-48e466c7a3b8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -24,16 +27,19 @@
     <ClCompile Include="shader_loader.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="simple_quad_mesh.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Libs\glew.h">
+    <ClInclude Include="shader_loader.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="Libs\glut.h">
-      <Filter>Headerdateien</Filter>
+      <Filter>Libs</Filter>
     </ClInclude>
-    <ClInclude Include="shader_loader.h">
-      <Filter>Headerdateien</Filter>
+    <ClInclude Include="Libs\glew.h">
+      <Filter>Libs</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -43,5 +49,16 @@
     <Library Include="Libs\glew32.lib">
       <Filter>Libs</Filter>
     </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="simple_quad._mesh.h">
+      <Filter>Headerdateien</Filter>
+    </None>
+    <None Include="Shader\simple_quad_shader_frag.glsl">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="Shader\simple_quad_shader_vert.glsl">
+      <Filter>Shader</Filter>
+    </None>
   </ItemGroup>
 </Project>

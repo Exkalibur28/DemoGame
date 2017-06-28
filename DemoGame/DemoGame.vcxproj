@@ -113,6 +113,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="shader_loader.cpp" />
+    <ClCompile Include="simple_quad_mesh.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Libs\glew.h" />
@@ -122,6 +123,11 @@
   <ItemGroup>
     <Library Include="Libs\glew32.lib" />
     <Library Include="Libs\glut32.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shader\simple_quad_shader_frag.glsl" />
+    <None Include="Shader\simple_quad_shader_vert.glsl" />
+    <None Include="simple_quad._mesh.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
