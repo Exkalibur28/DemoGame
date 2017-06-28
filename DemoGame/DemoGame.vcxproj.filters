@@ -9,15 +9,15 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
-    <Filter Include="Libs">
-      <UniqueIdentifier>{613cbcfe-6f94-4163-930b-1f531c5ea607}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Shader">
       <UniqueIdentifier>{6e7e0570-cf8d-4aa2-8b2f-48e466c7a3b8}</UniqueIdentifier>
     </Filter>
     <Filter Include="Quelldateien\Ressourcendateien">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Headerdateien\Libs">
+      <UniqueIdentifier>{613cbcfe-6f94-4163-930b-1f531c5ea607}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -33,27 +33,33 @@
     <ClCompile Include="rendering_utilities.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="timer.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="shader_loader.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="Libs\glut.h">
-      <Filter>Libs</Filter>
+      <Filter>Headerdateien\Libs</Filter>
     </ClInclude>
     <ClInclude Include="Libs\glew.h">
-      <Filter>Libs</Filter>
+      <Filter>Headerdateien\Libs</Filter>
     </ClInclude>
     <ClInclude Include="rendering_utilities.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="timer.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="Libs\glut32.lib">
-      <Filter>Libs</Filter>
+      <Filter>Headerdateien\Libs</Filter>
     </Library>
     <Library Include="Libs\glew32.lib">
-      <Filter>Libs</Filter>
+      <Filter>Headerdateien\Libs</Filter>
     </Library>
   </ItemGroup>
   <ItemGroup>

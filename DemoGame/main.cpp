@@ -1,12 +1,15 @@
 #include"Libs/glew.h"
 #include"Libs/glut.h"
 #include"simple_quad_mesh.h"
+#include"timer.h"
 #include<Windows.h>
+#include<iostream>
+
+using namespace std;
 
 quad_mesh* q;
 camera cam = camera(16, 9);
 matrix4x4 model;
-
 
 void glut_loop() {
 	glClearColor(1, 0.2, 1, 1);
