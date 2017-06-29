@@ -18,6 +18,26 @@ void glut_loop() {
 	glutSwapBuffers();
 }
 
+void glut_keyinput(unsigned char key, int x, int y)
+{
+	cout << "Key: '" << key << "', x: " << x << ", y: " << y << "\n";
+}
+
+void glut_mouseinput(int button, int state, int x, int y)
+{
+	cout << "Button: " << button << ", State: " << state << ", x: " << x << ", y: " << y << "\n";
+}
+
+void glut_mousemotion(int x, int y)
+{
+	cout << "x: " << x << ", y: " << y << "\n";
+}
+
+void glut_passivemousemotion(int x, int y)
+{
+	cout << "x: " << x << ", y: " << y << "\n";
+}
+
 int main(int argc, char** argv) {
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
@@ -31,6 +51,10 @@ int main(int argc, char** argv) {
 
 	glutDisplayFunc(glut_loop);
 	glutIdleFunc(glut_loop);
+	glutKeyboardFunc(glut_keyinput);
+	glutMouseFunc(glut_mouseinput);
+	glutMotionFunc(glut_mousemotion);
+	glutPassiveMotionFunc(glut_passivemousemotion);
 	glutMainLoop();
 	delete q;
 }
