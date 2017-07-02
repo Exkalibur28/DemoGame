@@ -24,6 +24,8 @@ class camera {
 public:
 	camera(float width, float height);
 	void set_pos(float x, float y);
+	float get_x();
+	float get_y();
 	matrix4x4 get_mat();
 private:
 	void build();

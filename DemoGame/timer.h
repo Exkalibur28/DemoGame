@@ -3,7 +3,7 @@
 #include<ctime>
 
 /*
-Gibt die Zeit in Millisekunden seit dem letzte Start.
+Gibt die Zeit in Millisekunden seit dem letzten Start.
 */
 class timer {
 public:

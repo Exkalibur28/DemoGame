@@ -111,6 +111,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="key_memorizer.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="rendering_utilities.cpp" />
     <ClCompile Include="shader_loader.cpp" />
@@ -118,6 +119,7 @@
     <ClCompile Include="timer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="key_memorizer.h" />
     <ClInclude Include="timer.h" />
     <ClInclude Include="Libs\glew.h" />
     <ClInclude Include="Libs\glut.h" />

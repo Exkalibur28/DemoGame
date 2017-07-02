@@ -54,3 +54,11 @@ void camera::set_pos(float x, float y) {
 	this->posy = y;
 	build();
 }
+
+float camera::get_x() {
+	return this->posx;
+}
+
+float camera::get_y() {
+	return this->posy;
+}
