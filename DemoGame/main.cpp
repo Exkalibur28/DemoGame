@@ -12,7 +12,7 @@ using namespace std;
 
 timer mainTimer;
 
-quad_mesh *q , *g;
+quad_mesh *g;
 /*
 Debug Kamera; Steuerung mit WASD
 */
@@ -53,11 +53,10 @@ void update_timed()
 
 void glut_loop()
 {
-	update_timed();
 	glClearColor(0.75, 0.75, 0.85, 1);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	q->draw(model, cam.get_mat());
 	g->draw(model, cam.get_mat());
+	update_timed();
 	glutSwapBuffers();
 }
 
@@ -89,7 +88,6 @@ void glut_passivemousemotion(int x, int y)
 }
 
 int main(int argc, char** argv) {
-	pl = new player(0, 0);
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
 	glutInitWindowPosition(50, 50);
@@ -97,9 +95,8 @@ int main(int argc, char** argv) {
 	glutCreateWindow("Denise ist doof");
 	glewInit();
 
-	q = new quad_mesh(point(-0.5, -0.5), point(-0.5, 0.5), point(0.5, 0.5), point(0.5, -0.5));
+	pl = new player(0, 0);
 	g = new quad_mesh(point(-100, -1), point(-100, -0.5), point(100, -0.5), point(100, -1));
-	q->set_color(0,1,0,1);
 	g->set_color(0.2, 0.2, 0.2, 1);
 
 	glutDisplayFunc(glut_loop);
@@ -111,5 +108,5 @@ int main(int argc, char** argv) {
 	glutPassiveMotionFunc(glut_passivemousemotion);
 	mainTimer.start();
 	glutMainLoop();
-	delete q;
+	delete pl;
 }

@@ -113,6 +113,7 @@
   <ItemGroup>
     <ClCompile Include="key_memorizer.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="player.cpp" />
     <ClCompile Include="rendering_utilities.cpp" />
     <ClCompile Include="shader_loader.cpp" />
     <ClCompile Include="simple_quad_mesh.cpp" />
@@ -120,6 +121,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="key_memorizer.h" />
+    <ClInclude Include="player.h" />
     <ClInclude Include="timer.h" />
     <ClInclude Include="Libs\glew.h" />
     <ClInclude Include="Libs\glut.h" />
