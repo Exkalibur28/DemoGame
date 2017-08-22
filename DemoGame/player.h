@@ -11,6 +11,6 @@ public:
 	void render(matrix4x4 view = matrix4x4());
 
 private:
-	quad_mesh quad = quad_mesh(point(), point(), point(), point());
+	quad_mesh quad = quad_mesh(point(0, 0), point(0, 0), point(0, 0), point(0, 0));
 	float x, y;
 };

@@ -8,15 +8,15 @@ player::player(float x, float y)
 {
 	this->x = x;
 	this->y = y;
-	quad.set_color(1.0, 0.0, 0.0, 1.0);
-	quad = quad_mesh(point(-width / 2, -width / 2), point(width / 2, -width / 2), point(width / 2, width / 2), point(-width / 2, width / 2));
+	quad = quad_mesh(point(-1, -1), point(-1, 1), point(1, 1), point(1, -1));
 }
 
 void player::render(matrix4x4 view)
 {
 	matrix4x4 m;
-	/*m.row_col(0, 3) = x;
-	m.row_col(1, 3) = y;*/
+	m.row_col(0, 3) = x;
+	m.row_col(1, 3) = y;
+	quad.set_color(1.0, 0.0, 0.0, 1.0);
 	quad.draw(m, view);
 
 }

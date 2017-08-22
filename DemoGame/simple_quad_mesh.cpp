@@ -1,5 +1,6 @@
 #include"simple_quad_mesh.h"
 #include"shader_loader.h"
+#include<iostream>
 
 static GLuint shader = -1;
 
@@ -28,8 +29,8 @@ quad_mesh::quad_mesh(point a, point b, point c, point d) {
 	unsigned int vao_data[] = { 1,0,2,3 };
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(vao_data), vao_data, GL_DYNAMIC_DRAW);
 	this->r = 1;
-	this->g = 0;
-	this->b = 1;
+	this->g = 1;
+	this->b = 0;
 	this->a = 1;
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -45,6 +46,8 @@ void quad_mesh::set_color(float r, float g, float b, float a) {
 void quad_mesh::draw(matrix4x4 model , matrix4x4 view) {
 	int loc = glGetUniformLocation(shader, "vert_col");
 	glUniform4f(loc, this->r, this->g, this->b, this->a);
+	using namespace std;
+	cout << "drawing with " << this->r << " " << this->g << " " << this->b << endl;
 	loc = glGetUniformLocation(shader, "model");
 	glUniformMatrix4fv(loc,1,false,model.get_data());
 	loc = glGetUniformLocation(shader, "view");
@@ -62,6 +65,6 @@ void quad_mesh::draw(matrix4x4 model , matrix4x4 view) {
 }
 
 quad_mesh::~quad_mesh() {
-	glDeleteBuffers(1, &vao);
-	glDeleteBuffers(1, &vb);
+	//glDeleteBuffers(1, &vao);
+	//glDeleteBuffers(1, &vb);
 }
