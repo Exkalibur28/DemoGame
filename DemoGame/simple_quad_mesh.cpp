@@ -5,7 +5,7 @@ static GLuint shader = -1;
 
 static void init_shader() {
 	if (shader == -1) {
-		shader = LoadShaders("Shader/simple_quad_shader_vert.glsl", "Shader/simple_quad_shader_frag.glsl");
+		shader = LoadShaders("C:/Users/olive/Source/Repos/DemoGame/DemoGame/Shader/simple_quad_shader_vert.glsl", "C:/Users/olive/Source/Repos/DemoGame/DemoGame/Shader/simple_quad_shader_frag.glsl");
 	}
 }
 

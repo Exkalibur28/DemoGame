@@ -5,11 +5,12 @@
 #include"key_memorizer.h"
 #include<Windows.h>
 #include<iostream>
+#include"player.h"
 
 using namespace std;
 
 
-timer cam_timer;
+timer mainTimer;
 
 quad_mesh *q , *g;
 /*
@@ -18,8 +19,10 @@ Debug Kamera; Steuerung mit WASD
 camera cam = camera(16, 9);
 matrix4x4 model;
 
-void update_camera() {
-	int i = cam_timer.look();
+player* pl = NULL;
+
+void update_camera(int i)
+{
 	float x = cam.get_x();
 	float y = cam.get_y();
 	if(mem_key_state('d'))
@@ -31,14 +34,29 @@ void update_camera() {
 	if (mem_key_state('s'))
 		y -= ((float)i) / 300;
 	cam.set_pos(x,y);
-	cam_timer.restart();
 }
 
-void glut_loop() {
-	update_camera();
+void update_entities(int tickDelta)
+{
+	pl->update(tickDelta);
+	pl->render(cam.get_mat());
+}
+
+void update_timed()
+{
+	int tickDelta = mainTimer.look();
+	mainTimer.restart();
+	update_entities(tickDelta);
+	update_camera(tickDelta);
+
+}
+
+void glut_loop()
+{
+	update_timed();
 	glClearColor(0.75, 0.75, 0.85, 1);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	q->draw(model,cam.get_mat());
+	q->draw(model, cam.get_mat());
 	g->draw(model, cam.get_mat());
 	glutSwapBuffers();
 }
@@ -71,6 +89,7 @@ void glut_passivemousemotion(int x, int y)
 }
 
 int main(int argc, char** argv) {
+	pl = new player(0, 0);
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
 	glutInitWindowPosition(50, 50);
@@ -90,7 +109,7 @@ int main(int argc, char** argv) {
 	glutMouseFunc(glut_mouseinput);
 	glutMotionFunc(glut_mousemotion);
 	glutPassiveMotionFunc(glut_passivemousemotion);
-	cam_timer.start();
+	mainTimer.start();
 	glutMainLoop();
 	delete q;
 }
