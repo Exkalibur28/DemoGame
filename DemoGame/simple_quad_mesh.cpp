@@ -47,7 +47,6 @@ void quad_mesh::draw(matrix4x4 model , matrix4x4 view) {
 	int loc = glGetUniformLocation(shader, "vert_col");
 	glUniform4f(loc, this->r, this->g, this->b, this->a);
 	using namespace std;
-	cout << "drawing with " << this->r << " " << this->g << " " << this->b << endl;
 	loc = glGetUniformLocation(shader, "model");
 	glUniformMatrix4fv(loc,1,false,model.get_data());
 	loc = glGetUniformLocation(shader, "view");
@@ -65,6 +64,6 @@ void quad_mesh::draw(matrix4x4 model , matrix4x4 view) {
 }
 
 quad_mesh::~quad_mesh() {
-	//glDeleteBuffers(1, &vao);
-	//glDeleteBuffers(1, &vb);
+	glDeleteBuffers(1, &vao);
+	glDeleteBuffers(1, &vb);
 }

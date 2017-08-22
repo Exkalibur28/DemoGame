@@ -10,6 +10,7 @@ typedef std::pair<float, float> point;
 /*
 Handhabt ein Viereck mit den Eckpunkten a,b,c,d.
 model und view optional. (Zum direkten Rendern in View- & Modelspace)
+quad_mesh auf keinen Fall kopieren. Wenn möglich nur Refernzen auf den Heap verwenden!
 */
 
 class quad_mesh {

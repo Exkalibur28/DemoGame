@@ -63,28 +63,28 @@ void glut_loop()
 void glut_keyinput(unsigned char key, int x, int y)
 {
 	mem_key_event(key, true);
-	cout << "Key: '" << key << "', x: " << x << ", y: " << y << "\n";
+	//cout << "Key: '" << key << "', x: " << x << ", y: " << y << "\n";
 }
 
 void glut_keyup(unsigned char key, int x, int y)
 {
 	mem_key_event(key, false);
-	cout << "Key: '" << key << "', x: " << x << ", y: " << y << " up \n";
+	//cout << "Key: '" << key << "', x: " << x << ", y: " << y << " up \n";
 }
 
 void glut_mouseinput(int button, int state, int x, int y)
 {
-	cout << "Button: " << button << ", State: " << state << ", x: " << x << ", y: " << y << "\n";
+	//cout << "Button: " << button << ", State: " << state << ", x: " << x << ", y: " << y << "\n";
 }
 
 void glut_mousemotion(int x, int y)
 {
-	cout << "x: " << x << ", y: " << y << "\n";
+	//cout << "x: " << x << ", y: " << y << "\n";
 }
 
 void glut_passivemousemotion(int x, int y)
 {
-	cout << "x: " << x << ", y: " << y << "\n";
+	//cout << "x: " << x << ", y: " << y << "\n";
 }
 
 int main(int argc, char** argv) {
@@ -96,6 +96,7 @@ int main(int argc, char** argv) {
 	glewInit();
 
 	pl = new player(0, 0);
+	std::cout << "ground" << endl;
 	g = new quad_mesh(point(-100, -1), point(-100, -0.5), point(100, -0.5), point(100, -1));
 	g->set_color(0.2, 0.2, 0.2, 1);
 
