@@ -112,21 +112,25 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="key_memorizer.cpp" />
+    <ClCompile Include="level.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="rendering_utilities.cpp" />
     <ClCompile Include="shader_loader.cpp" />
     <ClCompile Include="simple_quad_mesh.cpp" />
     <ClCompile Include="timer.cpp" />
+    <ClCompile Include="wall_block.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="key_memorizer.h" />
+    <ClInclude Include="level.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="timer.h" />
     <ClInclude Include="Libs\glew.h" />
     <ClInclude Include="Libs\glut.h" />
     <ClInclude Include="rendering_utilities.h" />
     <ClInclude Include="shader_loader.h" />
+    <ClInclude Include="wall_block.h" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="Libs\glew32.lib" />

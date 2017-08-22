@@ -34,11 +34,11 @@ void player::update(int tickDelta)
 	}
 	if (mem_key_state('i'))
 	{
-		velY -= speed;
+		velY += speed;
 	}
 	if (mem_key_state('k'))
 	{
-		velY += speed;
+		velY -= speed;
 	}
 	x += (velX / 1000) * (float)tickDelta;
 	y += (velY / 1000) * (float)tickDelta;
