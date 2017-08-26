@@ -4,6 +4,7 @@
 #include"Libs/glew.h"
 #include"Libs/glut.h"
 #include"rendering_utilities.h"
+#include"mesh.h"
 
 typedef std::pair<float, float> point;
 
@@ -13,7 +14,7 @@ model und view optional. (Zum direkten Rendern in View- & Modelspace)
 quad_mesh auf keinen Fall kopieren. Wenn möglich nur Refernzen auf den Heap verwenden!
 */
 
-class quad_mesh {
+class quad_mesh : public mesh {
 public:
 	quad_mesh(point a, point b, point c, point d);
 	~quad_mesh();

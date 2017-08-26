@@ -124,6 +124,7 @@
   <ItemGroup>
     <ClInclude Include="key_memorizer.h" />
     <ClInclude Include="level.h" />
+    <ClInclude Include="mesh.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="timer.h" />
     <ClInclude Include="Libs\glew.h" />
